@@ -5,20 +5,20 @@ class AddQuestion extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            question: ""
+            question_string: ""
         }
     }
 
     handleChange = (e) => {
         this.setState({
-            question: e.target.value
+            question_string: e.target.value
         })
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
         addQ(this.state)
-        this.setState({ question: "" })
+        this.setState({ question_string: "" })
     }
 
 
@@ -30,7 +30,7 @@ class AddQuestion extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="question">Question</label>
-                        <input type="text" className="form-control" name="question" onChange={this.handleChange} value={this.state.question} />
+                        <input type="text" className="form-control" name="question_string" onChange={this.handleChange} value={this.state.question_string} />
                     </div>
                     <div className="submit">
                         <button type="submit" className="btn btn-primary">Add</button>
