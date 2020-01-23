@@ -1,5 +1,6 @@
 import React from 'react'
-import { getQuestions } from '../api'
+import { fetchQuestions } from '../actions'
+import { connect } from 'react-redux'
 
 class DisplayQuestion extends React.Component {
     constructor() {
@@ -10,19 +11,15 @@ class DisplayQuestion extends React.Component {
     }
 
     componentDidMount() {
-        getQuestions()
-            .then(questions => {
-                this.setState({ questions: questions })
-            })
+        this.props.dispatch(fetchQuestions())
     }
 
     render() {
-        console.log(this.state)
         return (
             <>
                 <h2>Current questions</h2>
                 <ul>
-                    {this.state.questions.map((questions, i) => {
+                    {this.props.questions.map((questions, i) => {
                         return <li key={i}>{questions.question_string}</li>
                     })}
                 </ul>
@@ -31,4 +28,11 @@ class DisplayQuestion extends React.Component {
         )
     }
 }
-export default DisplayQuestion
+
+function mapStateToProps(reduxState) {
+    return {
+        questions: reduxState.questions
+    }
+}
+
+export default connect(mapStateToProps)(DisplayQuestion)

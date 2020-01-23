@@ -1,5 +1,7 @@
 import React from 'react'
-import { addQ } from '../api'
+import { addQuestion } from '../actions'
+import { connect } from 'react-redux'
+
 
 class AddQuestion extends React.Component {
     constructor(props) {
@@ -17,7 +19,7 @@ class AddQuestion extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        addQ(this.state)
+        this.props.dispatch(addQuestion(this.state))
         this.setState({ question_string: "" })
     }
 
@@ -40,4 +42,4 @@ class AddQuestion extends React.Component {
         )
     }
 }
-export default AddQuestion
+export default connect()(AddQuestion)
