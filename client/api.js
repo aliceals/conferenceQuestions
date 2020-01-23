@@ -5,3 +5,8 @@ export function addQ(question) {
         .send(question)
         .then(res => res.body)
 }
+
+export function getQuestions() {
+    return request.get('/api/v1/messages')
+        .then(res => res.body)
+}

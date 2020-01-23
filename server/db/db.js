@@ -7,6 +7,12 @@ function addQuestion(question, db = database) {
         .insert(question)
 }
 
+function getAllQuestions(db = database) {
+    return db('questions')
+        .select()
+}
+
 module.exports = {
     addQuestion,
+    getAllQuestions
 }

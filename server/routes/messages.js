@@ -7,4 +7,10 @@ router.post('/', (req, res) => {
         .then(id => res.send(id))
 })
 
+
+router.get('/', (req, res) => {
+    db.getAllQuestions()
+        .then(questions => res.send(questions))
+})
+
 module.exports = router

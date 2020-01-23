@@ -26,7 +26,7 @@ class AddQuestion extends React.Component {
     render() {
         return (
             <>
-                <h2>This will be where you can ask questions</h2>
+                <h2>Type here to ask a question</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="question">Question</label>
