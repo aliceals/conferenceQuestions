@@ -12,7 +12,14 @@ function getAllQuestions(db = database) {
         .select()
 }
 
+function deleteQuestion(id, db = database) {
+    return db('questions')
+        .where('question_id', id)
+        .del()
+}
+
 module.exports = {
     addQuestion,
-    getAllQuestions
+    getAllQuestions,
+    deleteQuestion
 }

@@ -10,3 +10,10 @@ export function getQuestions() {
     return request.get('/api/v1/messages')
         .then(res => res.body)
 }
+
+
+export function deleteQ(id) {
+    return request.delete('/api/v1/messages')
+        .send({ id })
+        .then(res => res.body)
+}

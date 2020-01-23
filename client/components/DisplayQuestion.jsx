@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchQuestions } from '../actions'
+import { fetchQuestions, deleteQuestion } from '../actions'
 import { connect } from 'react-redux'
 
 class DisplayQuestion extends React.Component {
@@ -14,13 +14,19 @@ class DisplayQuestion extends React.Component {
         this.props.dispatch(fetchQuestions())
     }
 
+    deleteQuestion = (e) => {
+        let id = e.target.name
+        this.props.dispatch(deleteQuestion(id))
+
+    }
+
     render() {
         return (
             <>
                 <h2>Current questions</h2>
                 <ul>
                     {this.props.questions.map((questions, i) => {
-                        return <li key={i}>{questions.question_string}</li>
+                        return <li key={i}>{questions.question_string} <button name={questions.question_id} onClick={this.deleteQuestion}>delete</button></li>
                     })}
                 </ul>
 

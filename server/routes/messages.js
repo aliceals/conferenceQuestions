@@ -13,4 +13,9 @@ router.get('/', (req, res) => {
         .then(questions => res.send(questions))
 })
 
+router.delete('/', (req, res) => {
+    db.deleteQuestion(req.body.id)
+        .then(id => res.send({ id }))
+})
+
 module.exports = router

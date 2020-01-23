@@ -1,4 +1,4 @@
-import { getQuestions, addQ } from '../api'
+import { getQuestions, addQ, deleteQ } from '../api'
 
 
 export function setQuestions(questions) {
@@ -25,4 +25,14 @@ export function addQuestion(question) {
                 dispatch(fetchQuestions())
             })
     }
+}
+
+export function deleteQuestion(id) {
+    return dispatch => {
+        deleteQ(id)
+            .then(() => {
+                dispatch(fetchQuestions())
+            })
+    }
+
 }
