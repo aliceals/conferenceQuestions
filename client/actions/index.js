@@ -10,7 +10,6 @@ export function setQuestions(questions) {
 
 
 export function fetchQuestions() {
-    console.log("in here")
     return dispatch => {
         getQuestions()
             .then(questions => {
