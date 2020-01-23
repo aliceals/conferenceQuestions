@@ -2,12 +2,13 @@ const path = require('path')
 const express = require('express')
 
 const server = express()
+const messageRoutes = require('./routes/messages')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-server.post('/messages', (req, res) => {
-    console.log(req.body)
-})
+server.use('/api/v1/messages', messageRoutes)
+
+
 
 module.exports = server
