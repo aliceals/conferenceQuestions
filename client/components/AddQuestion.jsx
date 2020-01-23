@@ -4,6 +4,9 @@ import { addQ } from '../api'
 class AddQuestion extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            question: ""
+        }
     }
 
     handleChange = (e) => {
@@ -15,6 +18,7 @@ class AddQuestion extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         addQ(this.state)
+        this.setState({ question: "" })
     }
 
 
@@ -26,7 +30,7 @@ class AddQuestion extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="question">Question</label>
-                        <input type="text" className="form-control" name="question" onChange={this.handleChange} />
+                        <input type="text" className="form-control" name="question" onChange={this.handleChange} value={this.state.question} />
                     </div>
                     <div className="submit">
                         <button type="submit" className="btn btn-primary">Add</button>
