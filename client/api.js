@@ -9,6 +9,7 @@ export function addQ(question) {
 export function getQuestions() {
     return request.get('/api/v1/messages')
         .then(res => res.body)
+        .then(setTimeout(getQuestions, 5000))
 }
 
 
