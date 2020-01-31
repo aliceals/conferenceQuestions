@@ -14,25 +14,19 @@ class DisplayQuestion extends React.Component {
         this.timer = setInterval(() => this.props.dispatch(fetchQuestions()), 10000)
     }
 
-    componentDidUpdate() {
-        // this.props.dispatch(fetchQuestions())
-        this.timer = null;
-    }
-
-
-    // componentDidMount() {
-    //     this.props.dispatch(fetchQuestions())
-    // }
-
     // componentDidUpdate() {
-    //     setInterval(() => this.props.dispatch(fetchQuestions()), 10000)
+    //     // this.props.dispatch(fetchQuestions())
+    //     this.timer = null;
     // }
-
 
     deleteQuestion = (e) => {
         let id = e.target.name
         this.props.dispatch(deleteQuestion(id))
 
+    }
+
+    star = () => {
+        console.log("clicked star")
     }
 
     render() {
@@ -41,7 +35,7 @@ class DisplayQuestion extends React.Component {
                 <h2>Current questions</h2>
                 <ul>
                     {this.props.questions.map((questions, i) => {
-                        return <li key={i}>{questions.question_string} <button name={questions.question_id} onClick={this.deleteQuestion}>delete</button></li>
+                        return <li key={i}>{questions.question_string} <button name={questions.question_id} onClick={this.deleteQuestion}>delete</button> <button className="star" onClick={this.star}>☆</button> </li>
                     })}
                 </ul>
 
