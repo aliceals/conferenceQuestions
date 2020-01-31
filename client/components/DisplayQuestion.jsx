@@ -10,23 +10,23 @@ class DisplayQuestion extends React.Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.timer = setInterval(() => this.props.dispatch(fetchQuestions()), 10000)
-    // }
-
-    // componentDidUpdate() {
-    //     // this.props.dispatch(fetchQuestions())
-    //     this.timer = null;
-    // }
-
-
     componentDidMount() {
-        this.props.dispatch(fetchQuestions())
+        this.timer = setInterval(() => this.props.dispatch(fetchQuestions()), 10000)
     }
 
     componentDidUpdate() {
-        setInterval(() => this.props.dispatch(fetchQuestions()), 10000)
+        // this.props.dispatch(fetchQuestions())
+        this.timer = null;
     }
+
+
+    // componentDidMount() {
+    //     this.props.dispatch(fetchQuestions())
+    // }
+
+    // componentDidUpdate() {
+    //     setInterval(() => this.props.dispatch(fetchQuestions()), 10000)
+    // }
 
 
     deleteQuestion = (e) => {
