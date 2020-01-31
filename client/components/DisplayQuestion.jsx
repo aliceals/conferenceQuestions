@@ -14,6 +14,10 @@ class DisplayQuestion extends React.Component {
         this.props.dispatch(fetchQuestions())
     }
 
+    componentDidUpdate() {
+        this.props.dispatch(fetchQuestions())
+    }
+
     deleteQuestion = (e) => {
         let id = e.target.name
         this.props.dispatch(deleteQuestion(id))
