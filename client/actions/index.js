@@ -15,7 +15,6 @@ export function fetchQuestions() {
             .then(questions => {
                 dispatch(setQuestions(questions))
             })
-            .then(setTimeout(fetchQuestions, 5000))
     }
 }
 
