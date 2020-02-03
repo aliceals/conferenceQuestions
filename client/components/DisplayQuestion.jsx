@@ -35,7 +35,7 @@ class DisplayQuestion extends React.Component {
                 <h2>Current questions</h2>
                 <ul>
                     {this.props.questions.map((questions, i) => {
-                        return <li key={i}>{questions.question_string} <button name={questions.question_id} onClick={this.deleteQuestion}>delete</button> <button className="star" onClick={this.star}></button> </li>
+                        return <li key={i}>{questions.question_string} <button name={questions.question_id} onClick={this.deleteQuestion}>delete</button> <span className="star" onClick={this.star}>★</span> </li>
                     })}
                 </ul>
 
