@@ -1,6 +1,7 @@
-.star {
-    border:none;
-    color: red;
-    height: 10px;
+
+
+.star{
+    background-color: red;
+    background-image: url('./images/starfilled.png')
 }
 
