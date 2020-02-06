@@ -19,10 +19,13 @@ function deleteQuestion(id, db = database) {
 }
 
 
-function starQuestion(id, db = database) {
+function starQuestion(starData, db = database) {
+    let id = starData.id
+    let bool = starData.bool
+
     return db('questions')
         .where('question_id', id)
-        .update({ 'starred': true })
+        .update({ 'starred': bool })
 }
 
 module.exports = {

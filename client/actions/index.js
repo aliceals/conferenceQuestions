@@ -37,9 +37,9 @@ export function deleteQuestion(id) {
 
 }
 
-export function starQuestion(id) {
+export function starQuestion(id, bool) {
     return dispatch => {
-        starQ(id)
+        starQ(id, bool)
             .then(() => {
                 dispatch(fetchQuestions())
             })

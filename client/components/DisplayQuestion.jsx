@@ -26,9 +26,11 @@ class DisplayQuestion extends React.Component {
     }
 
     star = (e) => {
+        let bool = e.target.value
         let id = e.target.name
-        this.props.dispatch(starQuestion(id))
+        this.props.dispatch(starQuestion(id, bool))
     }
+
 
     render() {
         return (
@@ -38,8 +40,8 @@ class DisplayQuestion extends React.Component {
                     {this.props.questions.map((questions, i) => {
                         return <li key={i}>{questions.question_string} <button name={questions.question_id}
                             onClick={this.deleteQuestion}>delete</button>
-                            {questions.starred ? <button className="star" name={questions.question_id} onClick={this.star}>⭐</button>
-                                : <button className="star" name={questions.question_id} onClick={this.star}>☆</button>}</li>
+                            {questions.starred ? <button className="star" name={questions.question_id} value={0} onClick={this.star}>⭐</button>
+                                : <button className="star" name={questions.question_id} value={1} onClick={this.star}>☆</button>}</li>
                     })}
                 </ul>
 

@@ -23,7 +23,7 @@ router.delete('/', (req, res) => {
 })
 
 router.put('/', (req, res) => {
-    db.starQuestion(req.body.id)
+    db.starQuestion(req.body)
         .then(id =>
             res.send({ id })
         )

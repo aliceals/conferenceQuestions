@@ -18,8 +18,8 @@ export function deleteQ(id) {
         .then(res => res.body)
 }
 
-export function starQ(id) {
+export function starQ(id, bool) {
     return request.put('/api/v1/messages')
-        .send({ id })
+        .send({ id, bool })
         .then(res => res.body)
 }
