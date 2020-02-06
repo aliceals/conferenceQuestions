@@ -17,3 +17,9 @@ export function deleteQ(id) {
         .send({ id })
         .then(res => res.body)
 }
+
+export function starQ(id) {
+    return request.put('/api/v1/messages')
+        .send({ id })
+        .then(res => res.body)
+}

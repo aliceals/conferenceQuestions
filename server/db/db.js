@@ -18,8 +18,16 @@ function deleteQuestion(id, db = database) {
         .del()
 }
 
+
+function starQuestion(id, db = database) {
+    return db('questions')
+        .where('question_id', id)
+        .update({ 'starred': true })
+}
+
 module.exports = {
     addQuestion,
     getAllQuestions,
-    deleteQuestion
+    deleteQuestion,
+    starQuestion
 }

@@ -22,4 +22,11 @@ router.delete('/', (req, res) => {
         .then(id => res.send({ id }))
 })
 
+router.put('/', (req, res) => {
+    db.starQuestion(req.body.id)
+        .then(id =>
+            res.send({ id })
+        )
+})
+
 module.exports = router
