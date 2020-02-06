@@ -4,6 +4,7 @@ exports.up = function (knex) {
         table.increments('question_id').primary()
         table.string('question_string')
         table.dateTime('date').defaultTo(new Date().toISOString())
+        table.boolean('starred')
     })
 };
 
