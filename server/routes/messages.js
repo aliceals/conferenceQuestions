@@ -3,7 +3,11 @@ const router = express.Router()
 const db = require('../db/db')
 
 router.post('/', (req, res) => {
-    db.addQuestion(req.body)
+    let question = {
+        question_string: req.body.question_string,
+        starred: false
+    }
+    db.addQuestion(question)
         .then(id => res.send(id))
 })
 
