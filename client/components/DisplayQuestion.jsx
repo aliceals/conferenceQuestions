@@ -36,7 +36,8 @@ class DisplayQuestion extends React.Component {
                 <ul>
                     {this.props.questions.map((questions, i) => {
                         return <li key={i}>{questions.question_string} <button name={questions.question_id}
-                            onClick={this.deleteQuestion}>delete</button> <span className="star" onClick={this.star}>★</span> </li>
+                            onClick={this.deleteQuestion}>delete</button>
+                            {questions.starred === null ? <span className="star" onClick={this.star}>★</span> : <span className="star" onClick={this.star}>starred</span>}</li>
                     })}
                 </ul>
 
