@@ -23,3 +23,9 @@ export function starQ(id, bool) {
         .send({ id, bool })
         .then(res => res.body)
 }
+
+export function moveUpQ(id) {
+    return request.put('/api/v1/messages')
+        .send({ id })
+        .then(res => res.body)
+}
