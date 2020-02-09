@@ -25,7 +25,7 @@ export function starQ(id, bool) {
 }
 
 export function moveUpQ(id) {
-    return request.put('/api/v1/messages')
+    return request.put('/api/v1/messages/moveup')
         .send({ id })
         .then(res => res.body)
 }

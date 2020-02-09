@@ -1,9 +1,21 @@
-
-
-.star{
-    background-image: url('./images/starfilled.png')
+body {
+  padding: 20px;
+  background-color: #66CCFF;
+  font-family: sans-serif;
 }
+
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+/* .star{
+    background-image: url('./images/starfilled.png')
+} */
 
 button {
     margin-left: 10px;
+    font-family:inherit;
+    border: 0;
+    background-color: #66CCFF;
 }

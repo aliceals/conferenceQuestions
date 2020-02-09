@@ -29,4 +29,13 @@ router.put('/', (req, res) => {
         )
 })
 
+
+router.put('/moveup', (req, res) => {
+    db.moveUp(req.body)
+        .then(id => {
+            console.log(id)
+            // res.send({ id })
+        })
+})
+
 module.exports = router

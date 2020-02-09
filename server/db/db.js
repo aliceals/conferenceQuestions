@@ -28,9 +28,18 @@ function starQuestion(starData, db = database) {
         .update({ 'starred': bool })
 }
 
+
+function moveUp(id, db = database) {
+    let newId = id.id - 1
+    return db('questions')
+        .where('question_id', id)
+        .update({ 'question_id': newId })
+}
+
 module.exports = {
     addQuestion,
     getAllQuestions,
     deleteQuestion,
-    starQuestion
+    starQuestion,
+    moveUp
 }

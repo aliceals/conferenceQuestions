@@ -4,11 +4,11 @@ import DisplayQuestion from './DisplayQuestion'
 
 const App = () => {
   return (
-    <>
+    <div className="container">
       <h1>Conference Questions</h1>
       <AddQuestion />
       <DisplayQuestion />
-    </>
+    </div>
   )
 }
 
