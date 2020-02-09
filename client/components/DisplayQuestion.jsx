@@ -41,7 +41,8 @@ class DisplayQuestion extends React.Component {
                         return <li key={i}>{questions.question_string} <button name={questions.question_id}
                             onClick={this.deleteQuestion}>delete</button>
                             {questions.starred ? <button className="star" name={questions.question_id} value={0} onClick={this.star}>⭐</button>
-                                : <button className="star" name={questions.question_id} value={1} onClick={this.star}>☆</button>}</li>
+                                : <button className="star" name={questions.question_id} value={1} onClick={this.star}>☆</button>}<button>⬆</button>
+                            <button>⬇</button></li>
                     })}
                 </ul>
 
