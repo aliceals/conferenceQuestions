@@ -4,3 +4,6 @@
     background-image: url('./images/starfilled.png')
 }
 
+button {
+    margin-left: 10px;
+}
