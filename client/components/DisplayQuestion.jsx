@@ -42,6 +42,7 @@ class DisplayQuestion extends React.Component {
     }
 
 
+
     render() {
         return (
             <>
@@ -52,7 +53,7 @@ class DisplayQuestion extends React.Component {
                             onClick={this.deleteQuestion}>delete</button>
                             {questions.starred ? <button className="star" name={questions.question_id} value={0} onClick={this.star}>⭐</button>
                                 : <button className="star" name={questions.question_id} value={1} onClick={this.star}>☆</button>}<button name={questions.question_id} value={questions.votes} onClick={this.upVote}>⬆</button>
-                            <button>⬇</button>Votes: {questions.votes}</li>
+                            Votes: {questions.votes}</li>
                     })}
                 </ul>
 

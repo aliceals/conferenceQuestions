@@ -9,6 +9,7 @@ function addQuestion(question, db = database) {
 
 function getAllQuestions(db = database) {
     return db('questions')
+        .orderBy('votes', 'desc')
         .select()
 }
 
