@@ -1,4 +1,4 @@
-import { getQuestions, addQ, deleteQ, starQ, moveUpQ } from '../api'
+import { getQuestions, addQ, deleteQ, starQ, upVoteQ } from '../api'
 
 
 export function setQuestions(questions) {
@@ -46,9 +46,9 @@ export function starQuestion(id, bool) {
     }
 }
 
-export function moveUpQuestion(id) {
+export function upVote(question) {
     return dispatch => {
-        moveUpQ(id)
+        upVoteQ(question)
             .then(() => {
                 dispatch(fetchQuestions())
             })

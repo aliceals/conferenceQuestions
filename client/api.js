@@ -24,8 +24,8 @@ export function starQ(id, bool) {
         .then(res => res.body)
 }
 
-export function moveUpQ(id) {
-    return request.put('/api/v1/messages/moveup')
-        .send({ id })
+export function upVoteQ(question) {
+    return request.put('/api/v1/messages/upvote')
+        .send(question)
         .then(res => res.body)
 }

@@ -30,11 +30,10 @@ router.put('/', (req, res) => {
 })
 
 
-router.put('/moveup', (req, res) => {
-    db.moveUp(req.body)
+router.put('/upvote', (req, res) => {
+    db.upVote(req.body)
         .then(id => {
-            console.log(id)
-            // res.send({ id })
+            res.send({ id })
         })
 })
 

@@ -5,6 +5,7 @@ exports.up = function (knex) {
         table.string('question_string')
         table.dateTime('date').defaultTo(new Date().toISOString())
         table.boolean('starred')
+        table.integer('votes')
     })
 };
 

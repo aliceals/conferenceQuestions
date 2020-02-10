@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchQuestions, deleteQuestion, starQuestion, moveUpQuestion } from '../actions'
+import { fetchQuestions, deleteQuestion, starQuestion, upVote } from '../actions'
 import { connect } from 'react-redux'
 
 class DisplayQuestion extends React.Component {
@@ -31,9 +31,14 @@ class DisplayQuestion extends React.Component {
         this.props.dispatch(starQuestion(id, bool))
     }
 
-    moveUp = (e) => {
+    upVote = (e) => {
         let id = e.target.name
-        this.props.dispatch(moveUpQuestion(id))
+        let votes = e.target.value
+        let questionData = {
+            id,
+            votes
+        }
+        this.props.dispatch(upVote(questionData))
     }
 
 
@@ -46,8 +51,8 @@ class DisplayQuestion extends React.Component {
                         return <li key={i}>{questions.question_string.charAt(0).toUpperCase() + questions.question_string.substring(1)} <button name={questions.question_id}
                             onClick={this.deleteQuestion}>delete</button>
                             {questions.starred ? <button className="star" name={questions.question_id} value={0} onClick={this.star}>⭐</button>
-                                : <button className="star" name={questions.question_id} value={1} onClick={this.star}>☆</button>}<button name={questions.question_id} onClick={this.moveUp}>⬆</button>
-                            <button>⬇</button></li>
+                                : <button className="star" name={questions.question_id} value={1} onClick={this.star}>☆</button>}<button name={questions.question_id} value={questions.votes} onClick={this.upVote}>⬆</button>
+                            <button>⬇</button>Votes: {questions.votes}</li>
                     })}
                 </ul>
 
