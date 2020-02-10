@@ -13,9 +13,16 @@ body {
     background-image: url('./images/starfilled.png')
 } */
 
-button {
+.button {
     margin-left: 10px;
     font-family:inherit;
     border: 0;
     background-color: #66CCFF;
+}
+
+.delete {
+  margin-left: 10px;
+    font-family:inherit;
+    border-radius: 30%;
+    background-color: lightskyblue;
 }
