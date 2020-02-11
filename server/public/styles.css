@@ -23,6 +23,10 @@ body {
 .delete {
   margin-left: 10px;
     font-family:inherit;
-    border-radius: 30%;
+    border-radius: 15%;
     background-color: lightskyblue;
+}
+
+li {
+  margin: 10px;
 }
