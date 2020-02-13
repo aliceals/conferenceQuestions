@@ -9,7 +9,7 @@ The MVP of this app will give the audience members an opportunity to ask questio
 display
 
 From the MVP the stretch goals include
-- The ability for the speaker to order, group, star or delete any questions
+- The ability for the speaker and audience to upvote, star or delete any questions
 - The ability for the speaker to be able to ask a poll to the audience and collect and collate those results
 - The ability for the audience to turn their devices into a microphone which will get projected out of the speakers system 
 - The ability for the speaker to upload resources they discuss and recorded talk
